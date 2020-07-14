@@ -89,6 +89,8 @@
                         <outlet property="bottomTextField" destination="L1I-XK-2Et" id="c8e-LM-HSt"/>
                         <outlet property="cameraButton" destination="9AX-kz-PPB" id="nuR-44-Us5"/>
                         <outlet property="imagePickerView" destination="g7A-MJ-zad" id="EGi-aO-a7W"/>
+                        <outlet property="navBar" destination="2BB-4F-zIP" id="uF1-pN-2xf"/>
+                        <outlet property="toolBar" destination="KVJ-jO-HCZ" id="cez-yN-C81"/>
                         <outlet property="topTextField" destination="97O-L5-FXe" id="Liy-v4-SSD"/>
                     </connections>
                 </viewController>

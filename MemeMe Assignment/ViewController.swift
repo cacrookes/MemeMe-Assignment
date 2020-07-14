@@ -12,6 +12,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     // MARK: - Outlets
     
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
@@ -87,7 +89,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return true
     }
     
-    // MARK: - Helper functions
+    // MARK: - General Helper functions
     
     /// Presents a UIImagePickerController view for a specified source type.
     ///
@@ -98,6 +100,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.sourceType = sourceType
         present(imagePicker, animated: true, completion: nil)
     }
+    
+    /// Generates a memed image
+    ///
+    /// - Returns: A UIImage capturing everything in the current view, with the toolbar and navbar hidden.
+    func generateMemedImage() -> UIImage {
+
+        toolBar.isHidden = true
+        navBar.isHidden = true
+
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        toolBar.isHidden = false
+        navBar.isHidden = false
+
+        return memedImage
+    }
+    
+    // MARK: - Keyboard related functions
     
     /// Shifts view up by the height value of the keyboard.
     ///
@@ -111,6 +135,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
 
+    /// Sets the view to it's original coordinates
+    ///
+    /// - Parameter notification: Expects a notification of type keyboardWillHideNotification.
     @objc func keyboardWillHide(_ notification: Notification) {
         view.frame.origin.y = 0
     }
