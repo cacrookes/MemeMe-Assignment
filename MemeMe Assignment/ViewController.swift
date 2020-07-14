@@ -29,9 +29,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        topTextField.delegate = self
+        bottomTextField.delegate = self
+        
         setTextFieldDefaultAttributes(for: topTextField, defaultText: "TOP")
         setTextFieldDefaultAttributes(for: bottomTextField, defaultText: "BOTTOM")
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,7 +63,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        // FIXME: this does not work
         // true if the text field is the top text field and default text is set
         let isTopDefaultText = (textField == topTextField && textField.text?.uppercased() == "TOP")
         // true if the text field is the bottom text field and default text is set
