@@ -4,6 +4,8 @@
 <dict>
 	<key>NSCameraUsageDescription</key>
 	<string>MemeMe uses the camera to take a photo for the meme.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>MemeMe saves memed images to your photo library.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>MemeMe uses your photo library when selecting a photo for the meme.</string>
 	<key>CFBundleDevelopmentRegion</key>

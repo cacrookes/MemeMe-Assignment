@@ -14,6 +14,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
@@ -39,9 +40,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         setTextFieldDefaultAttributes(for: topTextField, defaultText: "TOP")
         setTextFieldDefaultAttributes(for: bottomTextField, defaultText: "BOTTOM")
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        shareButton.isEnabled = false
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
     }
@@ -58,6 +61,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func pickImageFromCamera(_ sender: Any) {
         presentImagePicker(using: .camera)
+    }
+    
+    @IBAction func shareButtonClicked(_ sender: Any) {
+        let memedImage = generateMemedImage()
+        let activityView = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        present(activityView, animated: true, completion: nil)
+        activityView.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed:
+            Bool, arrayReturnedItems: [Any]?, error: Error?) in
+            if completed {
+                self.save(memedImage: memedImage)
+            }
+        }
     }
     
     // MARK: - Textfield functions
@@ -121,6 +136,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     
+    func save(memedImage: UIImage){
+        print("Saving meme")
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imagePickerView.image!, memeImage: memedImage)
+    }
+    
     // MARK: - Keyboard related functions
     
     /// Shifts view up by the height value of the keyboard.
@@ -171,6 +191,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             imagePickerView.image = image
+            shareButton.isEnabled = true
         }
         dismiss(animated: true, completion: nil)
     }
