@@ -11,12 +11,14 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     // MARK: - Outlets
+    
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
     // MARK: - Global variables
+    
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.foregroundColor: UIColor.white,
@@ -26,6 +28,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     // MARK: - View life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,9 +41,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewWillAppear(_ animated: Bool) {
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        subscribeToKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        unsubscribeFromKeyboardNotifications()
     }
 
     // MARK: - Actions
+    
     @IBAction func pickImageFromAlbum(_ sender: Any) {
         presentImagePicker(using: .photoLibrary)
     }
@@ -82,12 +91,51 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     /// Presents a UIImagePickerController view for a specified source type.
     ///
-    /// - Parameter sourceType: a UIImagePickerController source type. For example: .camera, .photoLibrary.
+    /// - Parameter sourceType: A UIImagePickerController source type. For example: .camera, .photoLibrary.
     func presentImagePicker(using sourceType: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = sourceType
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    /// Shifts view up by the height value of the keyboard.
+    ///
+    /// - Parameter notification: Expects a notification of type keyboardWillShowNotification.
+    @objc func keyboardWillShow(_ notification: Notification) {
+        // Only adjust view if the bottom text field is clicked.
+        // Sometimes keyboardWillShow gets called twice before keyboardWillHide is called.
+        // Therefore view.frame.origin.y == 0 ensures the view is only shifted up once.
+        if bottomTextField.isFirstResponder && view.frame.origin.y == 0 {
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
+    }
+
+    @objc func keyboardWillHide(_ notification: Notification) {
+        view.frame.origin.y = 0
+    }
+    
+    /// Returns the height of the keyboard.
+    ///
+    /// - Parameter notification: Expects a notification of type keyboardWillShowNotification.
+    /// - Returns: The numeric value of the keyboard height.
+    func getKeyboardHeight(_ notification: Notification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.cgRectValue.height
+    }
+    
+    // MARK: - Notification Center methods
+    
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    func unsubscribeFromKeyboardNotifications() {
+
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     // MARK: - UIImagePickerController Delegate Methods
@@ -103,5 +151,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+    
 }
 
