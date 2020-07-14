@@ -42,7 +42,11 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="RSC-bx-gKW"/>
-                                    <barButtonItem title="Camera" image="camera.fill" catalog="system" id="9AX-kz-PPB"/>
+                                    <barButtonItem title="Camera" image="camera.fill" catalog="system" id="9AX-kz-PPB">
+                                        <connections>
+                                            <action selector="pickImageFromCamera:" destination="BYZ-38-t0r" id="UtU-6d-kck"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Kll-1o-9Xi"/>
                                     <barButtonItem title="Album" id="eVl-Ru-7yD">
                                         <connections>

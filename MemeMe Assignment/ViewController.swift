@@ -17,20 +17,37 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
     }
 
     // MARK: - Actions
     @IBAction func pickImageFromAlbum(_ sender: Any) {
+        presentImagePicker(using: .photoLibrary)
+    }
+    
+    @IBAction func pickImageFromCamera(_ sender: Any) {
+        presentImagePicker(using: .camera)
+    }
+    
+    // MARK: - Helper functions
+    
+    /// Presents a UIImagePickerController view for a specified source type.
+    ///
+    /// - Parameter sourceType: a UIImagePickerController source type. For example: .camera, .photoLibrary.
+    func presentImagePicker(using sourceType: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = sourceType
         present(imagePicker, animated: true, completion: nil)
     }
     
     // MARK: - UIImagePickerController Delegate Methods
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             imagePickerView.image = image
         }
