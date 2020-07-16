@@ -136,9 +136,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     
+    /// Creates a meme object and saves it to the memes array in the AppDelegate.
+    ///
+    /// - Parameter memedImage: an image of the meme.
     func save(memedImage: UIImage){
-        print("Saving meme")
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, memeImage: memedImage)
+    
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     // MARK: - Keyboard related functions
