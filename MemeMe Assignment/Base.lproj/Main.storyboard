@@ -11,7 +11,7 @@
         <!--Sent Memes-->
         <scene sceneID="vY4-G4-pq8">
             <objects>
-                <tableViewController id="EwL-ea-bh9" sceneMemberID="viewController">
+                <tableViewController id="EwL-ea-bh9" customClass="SentMemesTableViewController" customModule="MemeMe_Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NGa-Vq-C5l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +57,7 @@
         <!--Sent Memes-->
         <scene sceneID="cGW-hz-A8n">
             <objects>
-                <collectionViewController id="JFz-VW-Sxj" sceneMemberID="viewController">
+                <collectionViewController id="JFz-VW-Sxj" customClass="SentMemesCollectionViewController" customModule="MemeMe_Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qZl-YE-raF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
