@@ -47,10 +47,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         shareButton.isEnabled = false
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subscribeToKeyboardNotifications()
+        self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         unsubscribeFromKeyboardNotifications()
+        self.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     // MARK: - Actions
@@ -72,7 +76,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if completed {
                 self.save(memedImage: memedImage)
             }
+            self.navigationController?.popToRootViewController(animated: true)
         }
+    }
+    
+    @IBAction func cancelButtonClicked(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     // MARK: - Textfield functions
