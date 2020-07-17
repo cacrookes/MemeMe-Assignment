@@ -12,6 +12,8 @@ private let reuseIdentifier = "Cell"
 
 class SentMemesCollectionViewController: UICollectionViewController {
 
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     // Set up the memes array to reference the memes array in the appDelegate
     var memes: [Meme]! {
         let object = UIApplication.shared.delegate
@@ -26,11 +28,19 @@ class SentMemesCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
 
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         collectionView.reloadData()
+        let space:CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
     
     
