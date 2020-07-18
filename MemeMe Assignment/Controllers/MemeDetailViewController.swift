@@ -19,8 +19,5 @@ class MemeDetailViewController: UIViewController {
         
         memeImage.image = meme.memeImage
     }
-    
-
-
 
 }

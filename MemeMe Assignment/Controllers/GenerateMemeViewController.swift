@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class GenerateMemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     // MARK: - Outlets
     
@@ -40,7 +40,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         setTextFieldDefaultAttributes(for: topTextField, defaultText: "TOP")
         setTextFieldDefaultAttributes(for: bottomTextField, defaultText: "BOTTOM")
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {

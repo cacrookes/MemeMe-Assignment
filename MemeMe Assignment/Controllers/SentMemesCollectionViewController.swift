@@ -29,8 +29,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
-
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -43,13 +41,11 @@ class SentMemesCollectionViewController: UICollectionViewController {
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
     
-    
     // MARK: - UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
@@ -60,7 +56,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
         let meme = memes[indexPath.row]
         cell.memeImageView.image = meme.memeImage
-        
         
         return cell
     }
