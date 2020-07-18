@@ -195,19 +195,19 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="g7A-MJ-zad" firstAttribute="top" secondItem="2BB-4F-zIP" secondAttribute="bottom" id="52B-iS-Jeu"/>
-                            <constraint firstItem="L1I-XK-2Et" firstAttribute="bottom" secondItem="g7A-MJ-zad" secondAttribute="bottom" constant="-16" id="5cL-Cg-kq6"/>
+                            <constraint firstItem="g7A-MJ-zad" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1Jt-Od-n8r"/>
+                            <constraint firstItem="L1I-XK-2Et" firstAttribute="bottom" secondItem="KVJ-jO-HCZ" secondAttribute="top" constant="-16" id="5cL-Cg-kq6"/>
+                            <constraint firstItem="g7A-MJ-zad" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Pq-if-7tl"/>
                             <constraint firstItem="KVJ-jO-HCZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Y6-KN-ALk"/>
                             <constraint firstItem="KVJ-jO-HCZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MGr-xO-qAO"/>
-                            <constraint firstItem="97O-L5-FXe" firstAttribute="top" secondItem="g7A-MJ-zad" secondAttribute="top" constant="16" id="PJK-Ui-aBh"/>
-                            <constraint firstItem="g7A-MJ-zad" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VBd-Ym-zOn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g7A-MJ-zad" secondAttribute="trailing" id="cb7-OG-ixL"/>
+                            <constraint firstItem="97O-L5-FXe" firstAttribute="top" secondItem="2BB-4F-zIP" secondAttribute="bottom" constant="16" id="PJK-Ui-aBh"/>
+                            <constraint firstItem="g7A-MJ-zad" firstAttribute="top" secondItem="2BB-4F-zIP" secondAttribute="bottom" id="Tx3-ze-jDt"/>
+                            <constraint firstItem="KVJ-jO-HCZ" firstAttribute="top" secondItem="g7A-MJ-zad" secondAttribute="bottom" id="Yzo-22-rTd"/>
                             <constraint firstItem="2BB-4F-zIP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dwY-Xk-6zu"/>
                             <constraint firstItem="KVJ-jO-HCZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ll8-vj-W3f"/>
                             <constraint firstItem="97O-L5-FXe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nP5-gs-OIJ"/>
                             <constraint firstItem="2BB-4F-zIP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pwy-Ca-u01"/>
                             <constraint firstItem="2BB-4F-zIP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rCQ-JQ-eAD"/>
-                            <constraint firstItem="KVJ-jO-HCZ" firstAttribute="top" secondItem="g7A-MJ-zad" secondAttribute="bottom" id="szm-Aq-lUk"/>
                             <constraint firstItem="L1I-XK-2Et" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uyJ-PO-SqX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

@@ -138,10 +138,12 @@ class GenerateMemeViewController: UIViewController, UIImagePickerControllerDeleg
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
 
+        let croppedMemeImage = memedImage.cgImage?.cropping(to: imageView.frame)
+        
         toolBar.isHidden = false
         navBar.isHidden = false
 
-        return memedImage
+        return UIImage(cgImage: croppedMemeImage!)
     }
     
     /// Creates a meme object and saves it to the memes array in the AppDelegate.
