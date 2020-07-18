@@ -18,6 +18,7 @@
 		3332AE7024C1340A00EC178C /* SentMemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3332AE6F24C1340A00EC178C /* SentMemeCollectionViewCell.swift */; };
 		3347046D24BE537600E18AC3 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3347046C24BE537600E18AC3 /* Meme.swift */; };
 		334DC41C24C27AE6003220BE /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334DC41B24C27AE6003220BE /* MemeDetailViewController.swift */; };
+		3387827F24C382B90042667C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3387827E24C382B90042667C /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		3332AE6F24C1340A00EC178C /* SentMemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		3347046C24BE537600E18AC3 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		334DC41B24C27AE6003220BE /* MemeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
+		3387827E24C382B90042667C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				331CB0C224BD311700E74B7A /* Assets.xcassets */,
 				331CB0C424BD311700E74B7A /* LaunchScreen.storyboard */,
 				331CB0C724BD311700E74B7A /* Info.plist */,
+				3387827E24C382B90042667C /* Constants.swift */,
 			);
 			path = "MemeMe Assignment";
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				3332AE6C24C11CA600EC178C /* SentMemesTableViewController.swift in Sources */,
 				331CB0BC24BD311600E74B7A /* SceneDelegate.swift in Sources */,
 				334DC41C24C27AE6003220BE /* MemeDetailViewController.swift in Sources */,
+				3387827F24C382B90042667C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

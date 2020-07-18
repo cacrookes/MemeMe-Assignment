@@ -38,7 +38,7 @@ class SentMemesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.identifiers.memeTableViewCell, for: indexPath)
 
         let meme = memes[indexPath.row]
         cell.textLabel?.text = "\(meme.topText)...\(meme.bottomText)"
@@ -48,7 +48,7 @@ class SentMemesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: K.identifiers.memeDetailViewController) as! MemeDetailViewController
         detailController.meme = memes[indexPath.row]
         self.navigationController!.pushViewController(detailController, animated: true)
     }

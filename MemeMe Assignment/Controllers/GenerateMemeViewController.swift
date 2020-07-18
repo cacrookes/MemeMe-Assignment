@@ -25,7 +25,7 @@ class GenerateMemeViewController: UIViewController, UIImagePickerControllerDeleg
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.foregroundColor: UIColor.white,
-        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSAttributedString.Key.font: UIFont(name: K.memeText.fontName, size: 40)!,
         NSAttributedString.Key.strokeWidth:  -4.0
     ]
     
@@ -38,8 +38,8 @@ class GenerateMemeViewController: UIViewController, UIImagePickerControllerDeleg
         topTextField.delegate = self
         bottomTextField.delegate = self
         
-        setTextFieldDefaultAttributes(for: topTextField, defaultText: "TOP")
-        setTextFieldDefaultAttributes(for: bottomTextField, defaultText: "BOTTOM")
+        setTextFieldDefaultAttributes(for: topTextField, defaultText: K.memeText.topDefaultText)
+        setTextFieldDefaultAttributes(for: bottomTextField, defaultText: K.memeText.bottomDefaultText)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,9 +98,9 @@ class GenerateMemeViewController: UIViewController, UIImagePickerControllerDeleg
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // true if the text field is the top text field and default text is set
-        let isTopDefaultText = (textField == topTextField && textField.text?.uppercased() == "TOP")
+        let isTopDefaultText = (textField == topTextField && textField.text?.uppercased() == K.memeText.topDefaultText)
         // true if the text field is the bottom text field and default text is set
-        let isBottomDefaultText = (textField == bottomTextField && textField.text?.uppercased() == "BOTTOM")
+        let isBottomDefaultText = (textField == bottomTextField && textField.text?.uppercased() == K.memeText.bottomDefaultText)
         // clear default text from text field
         if isTopDefaultText || isBottomDefaultText  {
             textField.text = ""
