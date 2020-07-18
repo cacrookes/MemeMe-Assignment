@@ -92,8 +92,8 @@ class GenerateMemeViewController: UIViewController, UIImagePickerControllerDeleg
     ///   - defaultText: The default text that will be set for the UITextField.
     func setTextFieldDefaultAttributes(for textField: UITextField, defaultText: String){
         textField.text = defaultText
-        textField.textAlignment = .center
         textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

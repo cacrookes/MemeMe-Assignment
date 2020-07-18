@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // Array of saved memes, declared here to easily share between view controllers.
+    // TODO: store memes in a persistent data structure instead of a global variable.
     var memes = [Meme]()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
