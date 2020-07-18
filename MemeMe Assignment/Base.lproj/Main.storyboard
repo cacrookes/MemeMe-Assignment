@@ -43,16 +43,31 @@
             </objects>
             <point key="canvasLocation" x="770" y="-469"/>
         </scene>
-        <!--View Controller-->
+        <!--Meme Detail View Controller-->
         <scene sceneID="231-Mg-ADh">
             <objects>
-                <viewController id="0GN-Uy-W4e" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailViewController" id="0GN-Uy-W4e" customClass="MemeDetailViewController" customModule="MemeMe_Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ay1-ZE-BFN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oG2-AW-KtQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0yW-g7-Yo2" firstAttribute="bottom" secondItem="oG2-AW-KtQ" secondAttribute="bottom" id="3tr-Br-Nat"/>
+                            <constraint firstItem="oG2-AW-KtQ" firstAttribute="top" secondItem="0yW-g7-Yo2" secondAttribute="top" id="I3q-QS-xin"/>
+                            <constraint firstItem="0yW-g7-Yo2" firstAttribute="trailing" secondItem="oG2-AW-KtQ" secondAttribute="trailing" id="Y6B-RA-qCe"/>
+                            <constraint firstItem="oG2-AW-KtQ" firstAttribute="centerX" secondItem="ay1-ZE-BFN" secondAttribute="centerX" id="cjw-tM-yJO"/>
+                            <constraint firstItem="oG2-AW-KtQ" firstAttribute="leading" secondItem="0yW-g7-Yo2" secondAttribute="leading" id="h3b-dx-2wF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0yW-g7-Yo2"/>
                     </view>
+                    <connections>
+                        <outlet property="memeImage" destination="oG2-AW-KtQ" id="TyF-Th-E32"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8R-DA-80n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -218,6 +233,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bBj-Er-SVx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XdH-Lw-fjg">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
