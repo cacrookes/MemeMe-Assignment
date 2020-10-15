@@ -24,7 +24,7 @@ From this screen, 2 actions are possible:
 
 ### Create Meme Screen
 On this screen you can create a new meme using the following instructions:
-1. To select an image to base your meme on, click either the camera icon in the tab bar to take a picture, or click on Album to select an image from your photo album.
+1. To select an image to base your meme on, click either the camera icon in the tab bar to take a picture, or click on `Album` to select an image from your photo album.
 2. You can rotate your device to change the orientation of your meme between portrain or landscape.
 3. Click on the text that says **TOP** to input the text you wish to be displayed at the top of your meme.
 4. Click on the text that says **BOTTOM** to input the text you wish to be displayed at the bottom of your meme.
