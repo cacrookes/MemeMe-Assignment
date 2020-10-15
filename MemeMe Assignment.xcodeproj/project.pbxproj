@@ -33,6 +33,7 @@
 		3332AE6B24C11CA600EC178C /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewController.swift; sourceTree = "<group>"; };
 		3332AE6D24C11CD500EC178C /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
 		3332AE6F24C1340A00EC178C /* SentMemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		333C269F2537D3B6002C9EB1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3347046C24BE537600E18AC3 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		334DC41B24C27AE6003220BE /* MemeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
 		3387827E24C382B90042667C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		331CB0AD24BD311600E74B7A = {
 			isa = PBXGroup;
 			children = (
+				333C269F2537D3B6002C9EB1 /* README.md */,
 				331CB0B824BD311600E74B7A /* MemeMe Assignment */,
 				331CB0B724BD311600E74B7A /* Products */,
 			);
